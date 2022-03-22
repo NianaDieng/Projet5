@@ -16,14 +16,13 @@ Article.findAll()
 
 //funtion pour recuperer les articles
 function createArticle(req,res){
-    if(!req.body.title ||!req.body.author || !req.body.resume ||!req.body.image || !req.body.file ){
+    if(!req.body.title ||!req.body.author || !req.body.resume || !req.body.contenu){
         res.status(400).send('vous devez remplir les donnes')
     }
     const article={title:req.body.title,
         author:req.body.author, 
         resume:req.body.resume,
-        image:req.body.image,
-        file:req.body.file,
+        contenu:req.body.contenu,
     }
     Article.create(article)
     .then(function(data){

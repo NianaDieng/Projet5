@@ -5,7 +5,7 @@ id:{type:Sequelize.INTEGER,autoIncrement:true,primaryKey:true,},
 title:{type:Sequelize.STRING,},
 author:{type:Sequelize.STRING,},
 resume:{type:Sequelize.STRING,},
-photo:{type:Sequelize.BLOB,},
+contenu:{type:Sequelize.STRING,},
     })
     return Article
 }

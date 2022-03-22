@@ -3,5 +3,5 @@ const router=express.Router()
 
 const article=require("../controllers/article")
 
-router.get("/",article.getAllArticles)
+router.get("/",blog.getAllArticles)
 module.exports=router
