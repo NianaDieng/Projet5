@@ -1,74 +1,59 @@
 <%- include("./partials/header.ejs") %>
 
 <div class="container pt-4">
-    <div class="row">
-        <div class="col-md-9">
-            <h1><%= title %></h1>
-
-        </div>
-    
-    <div class="col-md-3">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Ajouter un article 
-        </button>
+  <div class="row">
+    <div class="col-md-9">
+      <h1><%= title %></h1>
     </div>
-</div>
-<div class="row">
-    <% articles.forEach(function(article){ %>
-        <div class="col-md-4">
-            <div class="list-group">
-                <a href="" class="list-group-item">
-                    <%= article.title %> rédiger par:  <%= article.author%> 
-                </a></div>
-        </div>
-    <% }); %>
-    
-</div>
-    <!-- on cree une fonction qui permet de creer un article -->
-
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Créer un article</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        <form action="/articles" method="post">
-            <div class="mb-3">
-                <label for="title" class="form-label">Titre</label>
-                <input type="text" class="form-control" id="title"  name="title" placeholder="titre de votre article">
-              </div>
-              <div class="mb-3">
-                <label for="author" class="form-label">Auteur de l'article</label>
-                <input type="text" class="form-control" id="author"  name="author"  placeholder="Auteur de l'article">
-              </div>
-              <div class="mb-3">
-                <label for="resume" class="form-label">Résume de l'article</label>
-                <textarea class="form-control" id="resume" name="resume"  rows="3"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="contenu" class="form-label">Contenu de l'article</label>
-                <textarea class="form-control" id="contenu" name="contenu"  rows="3"></textarea>
-              </div>
-             
-              <button type="submit" class="btn btn-primary">Valider</button>
-              
-        </form>
-        </div>
-        
-      </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Ajouter un article 
+      </button>
     </div>
   </div>
+  <div class="row">
+    <% articles.forEach(function(article){ %>
+      <div class="col-md-4">
+        <div class="list-group">
+          <a href="" class="list-group-item">
+            <%= article.title %> rédiger par:  <%= article.author%> 
+          </a>
+        </div>
+      </div>
+    <% }); %>    
+  </div>
+</div>
 
-
-
-
-
-
-
-
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Créer un article</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/articles" method="post">
+          <div class="mb-3">
+            <label for="title" class="form-label">Titre</label>
+              <input type="text" class="form-control" id="title"  name="title" placeholder="titre de votre article">
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Auteur de l'article</label>
+              <input type="text" class="form-control" id="author"  name="author"  placeholder="Auteur de l'article">
+            </div>
+          <div class="mb-3">
+            <label for="resume" class="form-label">Résume de l'article</label>
+              <textarea class="form-control" id="resume" name="resume"  rows="3"></textarea>
+            </div>
+          <div class="mb-3">
+            <label for="contenu" class="form-label">Contenu de l'article</label>
+              <textarea class="form-control" id="contenu" name="contenu"  rows="3"></textarea>
+          </div>
+            <button type="submit" class="btn btn-primary">Valider</button>  
+        </form>
+      </div>        
+    </div>
+  </div>
+</div>
 
 <%- include("./partials/footer.ejs") %>
