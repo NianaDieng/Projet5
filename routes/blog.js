@@ -1,7 +1,9 @@
-const express=require("express")
-const router=express.Router()
+var express = require('express');
+var router = express.Router();
 
-const article=require("../controllers/article")
+/* GET blog page. */
+router.get('/', function(req, res, next) {
+  res.render('blog', { title: 'Blog' });
+});
 
-router.get("/",blog.getAllArticles)
-module.exports=router
+module.exports = router;
