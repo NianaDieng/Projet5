@@ -7,5 +7,4 @@ router.get("/",article.getAllArticles)
 router.post("/",article.createArticle)
 router.get("/:id/details",article.getAllArticles)
 
-
 module.exports=router
