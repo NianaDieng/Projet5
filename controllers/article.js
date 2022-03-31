@@ -44,4 +44,48 @@ function getArticleDetails(req,res){
     })
 }
 
-module.exports={getAllArticles,createArticle,getArticleDetails}
+// function deleteArticle(req,res){
+//     const id=req.params.id
+//     Article.destroy({
+//         where:{id: id}
+//     }).then(function(data){
+//         if(data==1){
+//             //livre supprimer
+//             res.redirect('/articles')
+//         }else{
+//             res.send({message:'article non supprimé'})
+//         }
+//     }).catch(function(err){
+//         res.status(500).send({message:err.message})
+//     })
+// }
+
+//funtion pour modifier un articles
+// function getArticletoUpdate(req,res){
+//     const id=req.params.id
+//     Article.findByPK(id)
+//     .then(function(data){
+//         res.render("update",{title:data.title,article:data})
+//     })
+//     .catch(function(err){
+//         res.status(500).send({message:err.message})
+//     })
+// }
+//
+// function updateBook(res,req){
+//     const id=req.params.id
+//     Article.update(req.body,{
+//         where:{id: id}
+//     }).then(function(data){
+//         if(data==1){
+            
+//             res.redirect('/articles')
+//         }else{
+//             res.send({message:'article non update'})
+//         }
+//     }).catch(function(err){
+//         res.status(500).send({message:err.message})
+//     })
+// }
+
+module.exports={getAllArticles,createArticle,getArticleDetails,}

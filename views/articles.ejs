@@ -15,8 +15,11 @@
     <% articles.forEach(function(article){ %>
       <div class="col-md-4">
         <div class="list-group">
-          <a href="" class="list-group-item">
-            <%= article.title %> rédiger par:  <%= article.author%> 
+          <a href="" 
+          class="list-group-item 
+          list-group-item-action">
+           <h6><%= article.title %> rédiger par:  <%= article.author%> </h6>
+            <p>Résumé:<%= article.resume %></p>
           </a>
         </div>
       </div>
