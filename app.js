@@ -1,5 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
+const mongoose = require('mongoose');
+ const Articlemodel=require('./config/Articlemodel');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -21,7 +23,7 @@ const blogRouter = require('./routes/blog');
 const detailsArticlesRouter = require('./routes/details');
 const aproposRouter = require('./routes/apropos');
 const contactRouter = require('./routes/contact');
-const db = require('./models');
+// const db = require('./models');
 
 // Render page
 app.use('/', indexRouter);
@@ -43,8 +45,8 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // Render the error page
-  res.status(err.status || 500);
+  res.status(err.status || 3000);
   res.render('error');
 });
-
+app.listen(8000, () => console.log("Server started listening on port: 8000"));
 module.exports = app;
