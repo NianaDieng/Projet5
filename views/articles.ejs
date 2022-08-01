@@ -3,11 +3,11 @@
 <div class="container pt-4">
   <div class="row">
     <div class="col-md-9">
-      <h1><%= title %></h1>
+      <h3>Ajouter un article</h3>
     </div>
     <div class="col-md-3">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Ajouter un article 
+        Ajouter
       </button>
     </div>
   </div>
@@ -41,11 +41,30 @@
             <label for="contenu" class="form-label">Contenu de l'article</label>
               <textarea class="form-control" id="contenu" name="contenu"  rows="3"></textarea>
           </div>
-            <button type="submit" class="btn btn-primary">Valider</button>  
+            <button type="submit" class="btn btn-primary">Valider</button>
         </form>
       </div>        
     </div>
   </div>
 </div>
+
+<!-- <div class="container pt-4">
+  <div class="row">
+    <div class="col-md-9">
+      <h1><%= title %></h1>
+    </div>
+    <div class="col-md-3 boutons">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Ajouter un article 
+      </button>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       <a href=""> Modifier un article</a> 
+      </button>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       <a href="">Supprimer un article </a>
+      </button>
+    </div>
+  </div>
+</div> -->
 
 <%- include("./partials/footer.ejs") %>
