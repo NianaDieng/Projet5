@@ -1,12 +1,12 @@
 const createError = require('http-errors');
 const express = require('express');
 const mongoose = require('mongoose');
- const Articlemodel=require('./config/Articlemodel');
+const Articlemodel = require('./config/Articlemodel');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const app = express();
-// db.Sequelize.sync();
+
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -20,18 +20,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 const indexRouter = require('./routes/index');
 const articlesRouter = require('./routes/articles');
 const blogRouter = require('./routes/blog');
-const detailsArticlesRouter = require('./routes/details');
-const aproposRouter = require('./routes/apropos');
-const contactRouter = require('./routes/contact');
-// const db = require('./models');
 
 // Render page
 app.use('/', indexRouter);
 app.use('/articles', articlesRouter);
 app.use('/blog', blogRouter);
-app.use('/detailsArticles', detailsArticlesRouter);
-app.use('/apropos', aproposRouter);
-app.use('/contact', contactRouter);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -48,5 +41,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 3000);
   res.render('error');
 });
+
 app.listen(8000, () => console.log("Server started listening on port: 8000"));
 module.exports = app;
